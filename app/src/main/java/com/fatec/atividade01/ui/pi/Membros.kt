@@ -23,20 +23,30 @@ fun MembersColumnComponent(
     modifier: Modifier = Modifier
 ) {
     val memberList = listOf(
-        Membro("Gilberto Satyro", "gilberto.satyro@fatec.sp.gov.br"),
-        Membro("Pedro Xavier", "pedro.xavier@fatec.sp.gov.br"),
-        Membro("Raphael Pedretti", "raphael.pedretti@fatec.sp.gov.br"),
-        Membro("Renato Valente", "renato.valente@fatec.sp.gov.br"),
+        Membro("Gilberto de Sousa Satyro", "gilberto.satyro@fatec.sp.gov.br"),
+        Membro("Pedro Xavier da Veiga", "pedro01.veiga@fatec.sp.gov.br"),
+        Membro("Raphael Pedretti", "raphael.silva130@fatec.sp.gov.br"),
+        Membro("Renato José Valente", "renato.valente@fatec.sp.gov.br")
     )
 
+    Text(
+        text = "Equipe - Found",
+        style = MaterialTheme.typography.titleLarge,
+        modifier = Modifier.padding(6.dp),
+        fontWeight = FontWeight.Bold
+    )
     LazyColumn(
         modifier = modifier
             .fillMaxWidth()
-            .padding(6.dp),
-        verticalArrangement = Arrangement.spacedBy(6.dp)
+            .padding(2.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(memberList) { member ->
             Card(
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(0xFF68D1B3),
+                    contentColor = Color(0xFF000000)
+                ),
                 modifier = Modifier.fillMaxWidth(),
                 elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
             ) {
@@ -49,7 +59,7 @@ fun MembersColumnComponent(
                     Text(
                         text = member.eMail,
                         style = MaterialTheme.typography.bodySmall,
-                        color = Color.Gray
+                        color = Color.DarkGray
                     )
                 }
             }
