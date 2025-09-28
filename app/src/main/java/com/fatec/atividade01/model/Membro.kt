@@ -1,4 +1,4 @@
-package com.fatec.atividade01.ui.pi
+package com.fatec.atividade01.model
 
 class Membro(
     val name: String,

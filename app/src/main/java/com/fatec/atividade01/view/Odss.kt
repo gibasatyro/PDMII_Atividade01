@@ -1,4 +1,4 @@
-package com.fatec.atividade01.ui.pi
+package com.fatec.atividade01.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,29 +14,33 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.fatec.atividade01.ui.theme.ComposeIntroTheme
+import com.fatec.atividade01.model.Ods
 
 @Composable
 fun OdssColumnComponent(
     modifier: Modifier = Modifier
 ) {
     val odsList = listOf(
-        Ods(4,
-            "Educação de Qualidade"
-//            "0xFFc7212f"
-        //   "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg"
+        Ods(
+            4,
+            "Educação de Qualidade",
+            "Assegurar a educação inclusiva e equitativa de qualidade, e promover " +
+                    "oportunidades de aprendizagem ao longo da vida para todos."
+            //   "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg"
         ),
-        Ods(10,
-            "Redução da Desigualdades"
-//            "0xFFe01583"
-        //    "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg"
+        Ods(
+            10,
+            "Redução da Desigualdades",
+            "Reduzir a desigualdade dentro dos países e entre eles."
+            //    "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg"
         ),
-        Ods(17,
-            "Parcerias e Meios de Implementação"
-//            "0xFF15496a"
-        //    "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg"
+        Ods(
+            17,
+            "Parcerias e Meios de Implementação",
+            "Fortalecer os meios de implementação e revitalizar a parceria global " +
+                    "para o desenvolvimento sustentável."
+            //    "https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg"
         ),
     )
 
@@ -54,11 +58,9 @@ fun OdssColumnComponent(
         verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         items(odsList) { ods ->
-//            val colorInt = ods.color.toColorInt()
             Card(
                 colors = CardDefaults.cardColors(
                     containerColor = Color.LightGray,
-//                    containerColor = Color(colorInt),
                     contentColor = Color.Black
                 ),
                 modifier = Modifier.fillMaxWidth(),
@@ -74,20 +76,17 @@ fun OdssColumnComponent(
 //                        contentScale = ContentScale.Crop
 //                    )
                     Text(
-                        text = "${ods.number} - ${ods.descryption}",
+                        text = "${ods.number} - ${ods.name}",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        text = ods.descryption,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = Color.DarkGray
                     )
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun LazyColumnComponentPreview() {
-    ComposeIntroTheme    {
-        OdssColumnComponent()
     }
 }

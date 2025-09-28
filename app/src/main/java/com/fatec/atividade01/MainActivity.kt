@@ -12,9 +12,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.fatec.atividade01.ui.pi.MembersColumnComponent
-import com.fatec.atividade01.ui.pi.OdssColumnComponent
-import com.fatec.atividade01.ui.pi.ProjectDescriptionComponent
+import com.fatec.atividade01.view.MembersColumnComponent
+import com.fatec.atividade01.view.OdssColumnComponent
+import com.fatec.atividade01.view.ProjectDescriptionComponent
 import com.fatec.atividade01.ui.theme.Atividade01Theme
 
 class MainActivity : ComponentActivity() {
@@ -27,16 +27,9 @@ class MainActivity : ComponentActivity() {
                     Column(
                           modifier = Modifier.padding(innerPadding)
                     ) {
-                        ProjectDescriptionComponent(
-                            modifier = Modifier.weight(0.65f)
-                        )
-
-                        Column(
-                            modifier = Modifier.weight(0.5f)
-                        ) {
-                            OdssColumnComponent(Modifier.weight(1f))
-                            MembersColumnComponent(Modifier.weight(1f))
-                        }
+                        ProjectDescriptionComponent(Modifier.weight(0.56f))
+                        OdssColumnComponent(Modifier.weight(0.30f))
+                        MembersColumnComponent(Modifier.weight(0.14f))
                     }
                 }
             }

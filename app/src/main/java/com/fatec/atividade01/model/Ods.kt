@@ -1,8 +1,8 @@
-package com.fatec.atividade01.ui.pi
+package com.fatec.atividade01.model
 
 class Ods(
     val number: Int,
+    val name: String,
     val descryption: String,
-//    val color: String
 //    val imageUrl: String
 )

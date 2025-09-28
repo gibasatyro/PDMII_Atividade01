@@ -1,4 +1,4 @@
-package com.fatec.atividade01.ui.pi
+package com.fatec.atividade01.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,9 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.fatec.atividade01.ui.theme.ComposeIntroTheme
+import com.fatec.atividade01.model.Membro
 
 @Composable
 fun MembersColumnComponent(
@@ -64,13 +63,5 @@ fun MembersColumnComponent(
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun LazyColumnComponentPreview() {
-    ComposeIntroTheme    {
-        MembersColumnComponent()
     }
 }
